@@ -1,4 +1,4 @@
-import {put, takeEvery, call} from 'redux-saga/effect';
+import {put, takeEvery, call} from 'redux-saga/effects';
 import { all } from '@redux-saga/core/effects'
 import {
     postHero,

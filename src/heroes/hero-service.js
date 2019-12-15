@@ -7,7 +7,7 @@ export async function getHeroes() {
 export async function getHeroById(id) {
     return await axios.get(`${BaseUrl}/${id}`)
 }
-export async function deleteHeroById() {
+export async function deleteHeroById(id) {
     return await axios.delete(`${BaseUrl}/${id}`)
 }
 export async function putHero(updatedHero) {
