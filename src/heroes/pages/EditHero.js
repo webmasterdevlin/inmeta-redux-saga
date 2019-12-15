@@ -1,4 +1,6 @@
 import React from 'react'
+// TODO: import react-redux utilities
+// TODO: import action creators
 
 export default function EditHero() {
     return (
