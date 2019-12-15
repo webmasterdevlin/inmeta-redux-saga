@@ -30,7 +30,7 @@ function* fetchingHeroes() {
 // renaming deconstructed object payload to id for readability
 function* removingHero({payload: id}) {
     try {
-        yield deleteHeroById(id);
+        yield call(deleteHeroById, id);
         yield put({ type: REMOVE_HERO_SUCCESS, payload: id})
     } catch (e) {
         yield put({ type: REMOVE_HERO_FAIL, payload: e.message})
