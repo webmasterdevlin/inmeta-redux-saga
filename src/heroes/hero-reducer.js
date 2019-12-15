@@ -28,6 +28,7 @@ export const heroReducer = (state = initialState, action) => {
         case types.REMOVE_HERO_FAIL:
             return { ...state, isLoading: false }
 
+            // TODO: cases for adding hero types
 
         default: 
             return state;

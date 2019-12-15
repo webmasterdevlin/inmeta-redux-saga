@@ -37,6 +37,8 @@ function* removingHero({payload: id}) {
     }
 }
 
+// TODO: function generator for adding hero
+
 /* Saga watches the actions of hero-actions */
 function* watchFetchingHeroes() {
     yield takeEvery(FETCH_HEROES_REQUEST, fetchingHeroes)
@@ -44,8 +46,13 @@ function* watchFetchingHeroes() {
 function* watchRemovingHero() {
     yield takeEvery(REMOVE_HERO_REQUEST, removingHero)
 }
+// TODO: function generator for watching adding hero
 
 /* Saga sends all the watchers to the sagaMiddleware to run. */
 export function* heroSaga() {
-    yield all([watchFetchingHeroes(), watchRemovingHero()])
+    yield all([
+        watchFetchingHeroes(), 
+        watchRemovingHero(),
+        // TODO: pass the function generator for watching adding hero
+    ])
 }

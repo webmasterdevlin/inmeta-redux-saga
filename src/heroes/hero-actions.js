@@ -7,6 +7,7 @@ export const REMOVE_HERO_REQUEST = "REMOVE_HERO_REQUEST";
 export const REMOVE_HERO_SUCCESS = "REMOVE_HERO_SUCCESS";
 export const REMOVE_HERO_FAIL = "REMOVE_HERO_FAIL";
 
+// TODO: add types for adding new hero
 
 /*
 action creators for Saga, which uses function generator side effect.
@@ -21,3 +22,5 @@ export const removeHero = (id) => ({
     type: REMOVE_HERO_REQUEST,
     payload: id
 })
+
+// TODO: add hero function that takes an object hero
