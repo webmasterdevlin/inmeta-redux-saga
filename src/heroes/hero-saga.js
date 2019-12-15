@@ -1,10 +1,10 @@
-import {put, takeEvery, call, fork} from 'redux-saga/effect';
+import {put, takeEvery, call} from 'redux-saga/effect';
 import { all } from '@redux-saga/core/effects'
 import {
-    postHero, 
-    getHeroes, 
-    deleteHeroById, 
-    putHero, 
+    postHero,
+    getHeroes,
+    deleteHeroById,
+    putHero,
     getHeroById
 } from './hero-service';
 import {
@@ -21,7 +21,7 @@ function* fetchingHeroes() {
         const {data} = yield call(getHeroes); // Saga: Passing a reference only
         yield put({type: FETCH_HEROES_SUCCESS, payload: data})
     } catch (e) {
-        yield put({type: FETCH_HEROES_FAIL})
+        yield put({type: FETCH_HEROES_FAIL, payload: e.message})
     }
 }
 
@@ -32,5 +32,7 @@ function* watchFetchingHeroes() {
 
 /* Saga sends all the watchers to the sagaMiddleware to run. */
 export function* heroSaga() {
-    yield all([watchFetchingHeroes()])
+    yield all([watchFetchingHeroes(),
+    // other watching functions
+    ])
 }
