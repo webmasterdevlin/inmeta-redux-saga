@@ -18,6 +18,6 @@ export const fetchHeroes = () => ({
 });
 
 export const removeHero = (id) => ({
-    type: DELETE_HERO_REQUEST,
+    type: REMOVE_HERO_REQUEST,
     payload: id
 })
